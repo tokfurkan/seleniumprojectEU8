@@ -15,7 +15,7 @@ public class T4_LibraryLoginPage {
 
         WebDriverManager.chromedriver().setup();
         WebDriver driver = new ChromeDriver();
-        //driver.manage().window().maximize();
+        driver.manage().window().maximize();
 
         //2. Go to: https://library2.cybertekschool.com/login.html
 
