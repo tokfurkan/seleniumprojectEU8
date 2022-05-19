@@ -9,7 +9,7 @@ public class T4_StaleElementReferenceException {
 
     public static void main(String[] args) {
 
-        //TC#6 : StaleElemenetReferenceException Task
+        //TC#6 : StaleElementReferenceException Task
         //1. Open a Chrome browser
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
@@ -19,7 +19,7 @@ public class T4_StaleElementReferenceException {
 
         driver.get("https://practice.cydeo.com/abtest");
 
-        //3. Locate "Cydeo" link, verifty it is displayed.
+        //3. Locate "Cydeo" link, verify it is displayed.
 
         WebElement cydeoLink = driver.findElement(By.xpath("//a[text()='CYDEO']"));
         System.out.println("cydeoLink.isDisplayed() = " + cydeoLink.isDisplayed());
