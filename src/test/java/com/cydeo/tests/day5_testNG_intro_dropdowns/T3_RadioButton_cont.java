@@ -29,10 +29,6 @@ public class T3_RadioButton_cont {
         clickAndVerifyRadioUButton(driver, "sport", "football");
         clickAndVerifyRadioUButton(driver, "color", "yellow");
 
-
-
-
-
     }
 
     private static void clickAndVerifyRadioUButton(WebDriver driver, String nameAttribute, String idValue){
