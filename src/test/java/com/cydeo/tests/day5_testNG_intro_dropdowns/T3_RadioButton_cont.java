@@ -25,23 +25,31 @@ public class T3_RadioButton_cont {
 
         //3. Locate name='sports' radio buttons and store them in a List of WebElements
 
-        List<WebElement> sportRadioButtons = driver.findElements(By.name("sport"));
+        clickAndVerifyRadioUButton(driver, "sport", "hockey");
+        clickAndVerifyRadioUButton(driver, "sport", "football");
+        clickAndVerifyRadioUButton(driver, "color", "yellow");
+
+
+
+
+
+    }
+
+    private static void clickAndVerifyRadioUButton(WebDriver driver, String nameAttribute, String idValue){
+        List<WebElement> radioButtons = driver.findElements(By.name(nameAttribute));
 
         //Loop through the list of WebElement and select matching result "hockey"
 
-        for (WebElement each : sportRadioButtons) {
+        for (WebElement each : radioButtons) {
             String eachId = each.getAttribute("id");
-            System.out.println("eachId = " + eachId);
 
-            if (eachId.equals("hockey")){
+
+            if (eachId.equals(idValue)){
                 each.click();
-                System.out.println("Hockey is selected : " + each.isSelected());
+                System.out.println(eachId + " is selected : " + each.isSelected());
                 break;
             }
         }
-
-
-
 
     }
 
