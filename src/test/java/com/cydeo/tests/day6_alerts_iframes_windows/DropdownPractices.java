@@ -31,12 +31,10 @@ public class DropdownPractices {
 
         //TC #5 : Selecting state from State dropdown and verifying result
 
-
         //3. Select Illinois
 
         Select stateDropdown = new Select(driver.findElement(By.xpath("//select[@id='state']")));
         stateDropdown.selectByVisibleText("Illinois");
-
 
         //4. Select Virginia
 
@@ -58,7 +56,42 @@ public class DropdownPractices {
 
     }
 
-    public void
+    @Test
+    public void dropdown_task6(){
+
+        //TC #6 : Selecting date on dropdown and verifying
+        // Select "December 1 , 1923" and verify it is selected
+
+        Select yearDropdown = new Select(driver.findElement(By.xpath("//select[@id='year']")));
+        Select monthDropdown = new Select(driver.findElement(By.xpath("//select[@id='month']")));
+        Select dayDropdown = new Select(driver.findElement(By.xpath("//select[@id='day']")));
+
+        //Select year using visible text
+
+        yearDropdown.selectByVisibleText("1923");
+
+        //Select month using value attribute
+
+        monthDropdown.selectByValue("11");
+
+        //Select day using index number
+
+        dayDropdown.selectByIndex(0);
+
+        String expectedYear = "1923";
+        String actualYear = yearDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(expectedYear, actualYear);
+
+        String expectedMonth = "December";
+        String actualMonth = monthDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(expectedMonth, actualMonth);
+
+        String expectedDay = "1";
+        String actualDay = dayDropdown.getFirstSelectedOption().getText();
+        Assert.assertEquals(expectedDay, actualDay);
+
+
+    }
 
 
 
