@@ -5,26 +5,32 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
 public class DropdownPractices {
 
+    public WebDriver driver;
 
-    @Test
-    public void dropdown_task5(){
-
-        //TC #5 : Selecting state from State dropdown and verifying result
-        //1. Open a Chrome browser
-
-        WebDriver driver = WebDriverFactory.getDriver("chrome");
+    @BeforeMethod
+    //1. Open a Chrome browser
+    public void setupMethod(){
+        driver = WebDriverFactory.getDriver("chrome");
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
         //2. Go to : https://practice.cydeo.com/dropdown
 
         driver.get("https://practice.cydeo.com/dropdown");
+    }
+
+    @Test
+    public void dropdown_task5(){
+
+        //TC #5 : Selecting state from State dropdown and verifying result
+
 
         //3. Select Illinois
 
@@ -50,13 +56,9 @@ public class DropdownPractices {
 
         //Use all Select options (visible text, value, index)
 
-
-
-
-
-
-
     }
+
+    public void
 
 
 
