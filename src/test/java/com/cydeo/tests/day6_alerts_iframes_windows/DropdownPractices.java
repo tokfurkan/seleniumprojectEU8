@@ -15,7 +15,7 @@ public class DropdownPractices {
     @Test
     public void dropdown_task5(){
 
-        //TC #5 : Selectibg state from State dropdown and verifying result
+        //TC #5 : Selecting state from State dropdown and verifying result
         //1. Open a Chrome browser
 
         WebDriver driver = WebDriverFactory.getDriver("chrome");
