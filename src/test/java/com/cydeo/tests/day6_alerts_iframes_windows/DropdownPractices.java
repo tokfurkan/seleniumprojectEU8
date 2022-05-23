@@ -95,7 +95,7 @@ public class DropdownPractices {
     }
 
     @AfterMethod
-    public void teardown(){
+    public void teardownMethod(){
         driver.close();
     }
 
